@@ -1,0 +1,20 @@
+.example-card {
+    max-width: 300px;
+    height: fit-content;
+  }
+  
+.example-header-image {
+background-size: cover;
+}
+
+.card-spacing {
+  margin: 30px;
+}
+
+.webkit-fill {
+  height: -webkit-fill-available;
+}
+
+.line-break {
+  line-break: anywhere;
+}

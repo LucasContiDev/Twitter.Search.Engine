@@ -1,0 +1,23 @@
+<body id="home">
+    <section class="search" (scroll)="onWindowScroll($event);">
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container h-100">
+                <div class="row h-100 align-items-left justify-content-left text-left">
+                    <div class="col-lg-10 align-self-end">
+                        <h1 class="text-uppercase text-white font-weight-bold">Busque pelos últimos tweets da sua hashtag favorita!
+                        </h1>
+                        <hr class="divider my-5" />
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 font-weight-light mb-5">O Twitter Search Engine é muito simples de usar. Basta digitar sua hashtag predileta abaixo, para ter acesso aos últimos tweets postados com ela!
+                        </p>
+                        <input [(ngModel)]="hashtag" id="hashtag" type="text" class="form-control" required/>
+                        <br>
+                        <a class="btn btn-primary btn-xl js-scroll-trigger" (click)="searchForTweets()">Buscar</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </section>
+</body>
