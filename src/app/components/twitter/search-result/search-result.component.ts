@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit } from "@angular/core";
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TwitterMessageEntity } from 'src/app/entities/twitter-message-entity/twitter-message-entity';
 
 @Component({
@@ -17,15 +17,21 @@ export class SearchResultComponent implements OnInit {
   response: any;
 
   constructor(private route : ActivatedRoute,
+    private router: Router,
     public twitterMessage: TwitterMessageEntity) {
     }
 
   async ngOnInit() {
-    console.log(this.twitterMessage)
-    await this.twitterMessage.statuses.then((res: any) =>
-    {
-      this.response = res
-    });
+    if (this.twitterMessage.statuses) {
+      console.log(this.twitterMessage)
+      await this.twitterMessage.statuses.then((res: any) =>
+      {
+        this.response = res
+      });
+    }
+    else {
+      this.router.navigate(['twitter/search'])
+    }
   }
 
   getPaginatorData(event) {

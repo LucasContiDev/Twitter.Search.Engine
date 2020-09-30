@@ -7,7 +7,7 @@ import { TwitterMessageEntity } from '../entities/twitter-message-entity/twitter
   providedIn: 'root'
 })
 export class TwitterSearchClientService {
-  apiUrl = "https://localhost:44377/v1/TwitterMessages";
+  apiUrl = "https://localhost:5011/v1/TwitterMessages";
 
   response: TwitterMessageEntity;
 

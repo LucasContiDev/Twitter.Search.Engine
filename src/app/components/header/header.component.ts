@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { KeycloakService } from 'keycloak-angular';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +11,8 @@ export class HeaderComponent implements OnInit {
   isCollapsed = true;
   navbarResponsive = "collapse navbar-collapse";
 
-  constructor() { 
+  constructor(private keycloakService: KeycloakService,
+    private router: Router) { 
   }
 
   ngOnInit() {
@@ -25,6 +28,15 @@ export class HeaderComponent implements OnInit {
       this.navbarResponsive = "collapse navbar-collapse";
       this.isCollapsed = true;
     }
+  }
+
+  logout() {
+      this.keycloakService.logout();
+  }
+
+  navigateToSection(section: string) {
+    window.location.hash = '';
+    window.location.hash = section;
   }
 
 }
