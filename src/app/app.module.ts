@@ -15,14 +15,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule }   from '@angular/forms';
 import { TwitterMessageEntity } from './entities/twitter-message-entity/twitter-message-entity';
 import { KeycloakService, KeycloakAngularModule } from 'keycloak-angular';
+import { clientId, environment, keycloakAuthUrl, realm } from 'src/environments/environment.prod'
 
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
     keycloak.init({
       config: {
-        url: 'http://localhost:8080/auth',
-        realm: 'master',
-        clientId: 'twitter-search',
+        url: keycloakAuthUrl.keycloakAuthUrl,
+        realm: realm.realm,
+        clientId: clientId.clientId,
       },
       initOptions: {
         onLoad: 'check-sso',
@@ -38,7 +39,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
     HeaderComponent,
     FooterComponent,
     SearchComponent,
-    SearchResultComponent
+    SearchResultComponent,
   ],
   imports: [
     BrowserModule,

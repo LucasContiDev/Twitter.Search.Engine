@@ -3,8 +3,25 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
 };
+
+export const apiUrl = {
+  apiUrl: "https://localhost:5001/v1/TwitterMessages"
+}
+
+export const keycloakAuthUrl = {
+  keycloakAuthUrl: "http://keycloak:8080/auth"
+}
+
+export const clientId = {
+  clientId: "twitter-search"
+}
+
+export const realm = {
+  realm: "master"
+}
+
 
 /*
  * For easier debugging in development mode, you can import the following file

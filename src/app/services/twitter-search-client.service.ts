@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { throwError } from 'rxjs';
 import { TwitterMessageEntity } from '../entities/twitter-message-entity/twitter-message-entity';
+import { apiUrl } from 'src/environments/environment.prod'
 
 @Injectable({
   providedIn: 'root'
 })
 export class TwitterSearchClientService {
-  apiUrl = "https://localhost:5011/v1/TwitterMessages";
+  apiUrl = apiUrl.apiUrl;
 
   response: TwitterMessageEntity;
 

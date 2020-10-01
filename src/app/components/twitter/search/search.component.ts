@@ -40,4 +40,18 @@ export class SearchComponent implements OnInit {
     this.hashtag = null;
     this.router.navigate(['twitter/search/result'])
   }
+
+  onWindowScroll() {
+    if (window.pageYOffset > 200) {
+      let element = document.getElementById('mainNav');
+       element.classList.add('sticky-header');
+      let element2 = document.getElementById('mainNav');
+       element2.classList.add('navbar-scrolled');
+    } else {
+     let element = document.getElementById('mainNav');
+       element.classList.remove('sticky-header');
+     let element2 = document.getElementById('mainNav');
+       element2.classList.remove('navbar-scrolled');
+    }
+ }
 }
